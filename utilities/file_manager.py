@@ -13,7 +13,7 @@ class FileManager:
         :param filepath: str
         """
         self.filepath = filepath
-        logger.debug(f"New object-type 'filepath' created: '{filepath}'")
+        logger.debug(f"New filepath-type object created: '{filepath}'")
 
     # Main methods
     def create(self) -> None:
