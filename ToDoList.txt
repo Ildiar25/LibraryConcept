@@ -1,0 +1,3 @@
+
+· Eliminate "if" statements from "book_class". We will be use that on "client_class".
+· Give a sight to "logger information" on "book_class" and "client_class": it's the same info. Change it!

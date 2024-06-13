@@ -10,7 +10,7 @@ class FileManager:
     def __init__(self, filepath: str) -> None:
         """
         This builder allows to create an object with de file path given.
-        :param filepath: str
+        :param filepath: string directory and file name with extension
         """
         self.filepath = filepath
         logger.debug(f"New filepath-type object created: '{filepath}'")

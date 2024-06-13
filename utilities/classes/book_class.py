@@ -11,11 +11,11 @@ class Book:
     def __init__(self, isbn: int, title: str, author: str, genre: str, status: str = "disponible") -> None:
         """
         This builder creates a book-type object to save its representative data
-        :param isbn:
-        :param title:
-        :param author:
-        :param genre:
-        :param status:
+        :param isbn: nine numbers integer
+        :param title: name of the book in string format
+        :param author: book's author in string format
+        :param genre: book's genre in string format
+        :param status: three string choices: ['disponible', 'prestado', 'reservado'], 'disponible' by default
         """
         self.isbn = isbn
         self.title = title
