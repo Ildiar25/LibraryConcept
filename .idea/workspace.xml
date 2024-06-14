@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Starting to work into Client class">
-      <change afterPath="$PROJECT_DIR$/ToDoList.txt" afterDir="false" />
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Client class finished! Time to minor changes on logger information and if's statements.&#10;Added 'ToDo' file.">
+      <change afterPath="$PROJECT_DIR$/utilities/classes/library_class.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/utl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/classes/book_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/book_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/classes/client_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/client_class.py" afterDir="false" />
@@ -114,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718217195213</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Client class finished! Time to minor changes on logger information and if's statements.&#10;Added 'ToDo' file.">
+      <option name="closed" value="true" />
+      <created>1718305590697</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718305590697</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +157,7 @@
     <MESSAGE value="Visualizing the little project" />
     <MESSAGE value="Updating class Book" />
     <MESSAGE value="Starting to work into Client class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to work into Client class" />
+    <MESSAGE value="Client class finished! Time to minor changes on logger information and if's statements.&#10;Added 'ToDo' file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Client class finished! Time to minor changes on logger information and if's statements.&#10;Added 'ToDo' file." />
   </component>
 </project>

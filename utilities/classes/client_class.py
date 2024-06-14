@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class Client:
 
-    def __init__(self, ident: int, name: str, surname: str, max_allowed: int = 3):
+    def __init__(self, ident: int, name: str, surname: str, max_allowed: int = 3, book_list: list[Book] = None):
         """
         This builder creates a client-type object to save its representative data
         :param ident: Alphanumeric code with nine elements
@@ -20,8 +20,11 @@ class Client:
         self.name = name
         self.surname = surname
         self.max_allowed = max_allowed
-        # We add an empty list for handle all books the client has
-        self.book_list: list[Book] = []
+
+        if book_list is None:
+            self.book_list = []
+        else:
+            self.book_list = book_list
         logger.debug(f"New client-type object created: '{self.name.upper()}'")
 
     def take_away(self, isbn: int, main_book_list: list[Book]) -> None:
@@ -31,7 +34,7 @@ class Client:
                 if len(self.book_list) < self.max_allowed and book.status == "disponible":
                     self.book_list.append(book)
                     logger.info(f"Book '{book.title}' added to {self.name}'s list")
-                    book.lend_book(self.name.capitalize())
+                    book.lent(self.name.capitalize())
 
                 else:
                     print("\nNo se puede llevar este ejemplar. Tiene el cupo completo o no se encuentra disponible.")
@@ -48,7 +51,7 @@ class Client:
 
                 for book in main_book_list:
                     if book.isbn == isbn:
-                        book.return_book(self.name.capitalize())
+                        book.returned(self.name.capitalize())
                         logger.info(f"The book '{book.title}' has change its status to '{book.status}'.")
 
     def save_book(self, isbn: int, main_book_list: list[Book]) -> None:
@@ -56,7 +59,7 @@ class Client:
         for book in main_book_list:
             if book.isbn == isbn:
                 if book.status == "prestado":
-                    book.save_book(self.name.capitalize())
+                    book.saved(self.name.capitalize())
                     logger.info(f"'{book.title}' reserved by '{self.name}'")
 
                 else:

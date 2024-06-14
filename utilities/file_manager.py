@@ -1,5 +1,6 @@
 
 from utilities.log_config import *
+import csv
 
 # Create our logger from FileManager to work with
 logger = logging.getLogger(__name__)
@@ -36,22 +37,38 @@ class FileManager:
             logger.error(err)
             print("\nUn error inesperado a ocurrido.")
 
-    def save(self, new_data: str) -> None:
+    def save(self, new_data: list[tuple]) -> None:
 
         try:
-            pass
+            with open(self.filepath, "w", encoding="utf-8", newline="") as file_saved:
+                add_data = csv.writer(file_saved)
 
+                for row in new_data:
+                    add_data.writerow(row)
+
+                logger.debug(f"Books added: {[element[1] for element in new_data]}")
+
+        except PermissionError as err:
+            logger.error(err)
+            print("\nNo se tienen permisos para modificar el archivo!")
         except Exception as err:
-            pass
+            logger.error(err)
+            print("\nUn error inesperado a ocurrido.")
 
-    def open(self) -> any:
+    def open(self) -> list[list]:
 
         name = self.filepath.split("/")
+        row_list = []
 
         try:
-            with open(self.filepath, "r") as file_info:
-                data = file_info.read()
+            with open(self.filepath, "r", encoding="utf-8") as file_info:
+                row = csv.reader(file_info)
                 logger.debug(f"Data readed from '{name[-1]}'")
+                logger.debug(f"Data-type: {type(row).__name__.upper()}: DATA : {row}")
+
+                for info_list in row:
+                    row_list.append(info_list)
+                logger.info(f"Data from {name[-1]} loaded correctly!")
 
         except FileNotFoundError as err:
             logger.error(err)
@@ -61,4 +78,4 @@ class FileManager:
             print("\nUn error inesperado a ocurrido.")
 
         else:
-            return data
+            return row_list

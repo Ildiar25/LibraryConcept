@@ -5,9 +5,13 @@ from utilities.classes.client_class import Client
 
 if __name__ == "__main__":
 
-    new_file = FileManager("resources/test.txt")
+    new_file = FileManager("resources/test.csv")
 
-    new_file.open()
+    new_file.save([(123456789, "How to cry alone", "My sunbathed Balls", "comedy", "disponible"),
+                   (246813579, "From Corporal to Dick", "Mary's Little Goat", "drama", "prestado")])
+    data_thing = new_file.open()
+
+    print(data_thing)
 
     new_book = Book(123456789, "How to cry alone", "My Sunbathed Balls", "comedy")
     new_book_2 = Book(246813579, "From Corporal to Dick", "Mary's Little Goat", "drama")
@@ -33,27 +37,27 @@ if __name__ == "__main__":
     #
     # new_file.create()
 
-    book_list = [new_book, new_book_2]
-    print("\nPrimera lista:")
-    print(f"{[name.status for name in book_list]}")
-
-    client_01 = Client(123456789, "Joan", "Pastor")
-    client_02 = Client(246813579, "María", "Gozalbez")
-
-    client_01.take_away(123456789, book_list)
-
-    print("\nSegunda lista:")
-    print(f"{[name.status for name in book_list]}")
-
-    client_02.take_away(246813579, book_list)
-
-    print("\nTercera lista:")
-    print(f"{[name.status for name in book_list]}")
-
-    print("\nClient lists:")
-    print(client_01.name, [name.title for name in client_01.book_list])
-    print(client_02.name, [name.title for name in client_02.book_list])
-
-    client_02.take_away(123456789, book_list)
-    client_01.give_back(123456789, book_list)
-    print(f"{[name.status for name in book_list]}")
+    # book_list = [new_book, new_book_2]
+    # print("\nPrimera lista:")
+    # print(f"{[name.status for name in book_list]}")
+    #
+    # client_01 = Client(123456789, "Joan", "Pastor")
+    # client_02 = Client(246813579, "María", "Gozalbez")
+    #
+    # client_01.take_away(123456789, book_list)
+    #
+    # print("\nSegunda lista:")
+    # print(f"{[name.status for name in book_list]}")
+    #
+    # client_02.take_away(246813579, book_list)
+    #
+    # print("\nTercera lista:")
+    # print(f"{[name.status for name in book_list]}")
+    #
+    # print("\nClient lists:")
+    # print(client_01.name, [name.title for name in client_01.book_list])
+    # print(client_02.name, [name.title for name in client_02.book_list])
+    #
+    # client_02.take_away(123456789, book_list)
+    # client_01.give_back(123456789, book_list)
+    # print(f"{[name.status for name in book_list]}")
