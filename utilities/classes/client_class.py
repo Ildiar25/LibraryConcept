@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class Client:
 
-    def __init__(self, ident: int, name: str, surname: str, max_allowed: int = 3, book_list: list[Book] = None):
+    def __init__(self, ident: int, name: str, surname: str, max_allowed: int = 3, book_list: list[int] = None):
         """
         This builder creates a client-type object to save its representative data
         :param ident: Alphanumeric code with nine elements
@@ -32,22 +32,22 @@ class Client:
         for book in main_book_list:
             if book.isbn == isbn:
                 if len(self.book_list) < self.max_allowed and book.status == "disponible":
-                    self.book_list.append(book)
+                    self.book_list.append(book.isbn)
                     logger.info(f"Book '{book.title}' added to {self.name}'s list")
                     book.lent(self.name.capitalize())
 
                 else:
                     print("\nNo se puede llevar este ejemplar. Tiene el cupo completo o no se encuentra disponible.")
-                    logger.debug(f"Client list: {[b_name.title for b_name in self.book_list]} | {book.title.upper()} "
+                    logger.debug(f"Client list: {[num for num in self.book_list]} | {book.title.upper()} "
                                  f"status:'{book.status}'")
 
     def give_back(self, isbn: int, main_book_list: list[Book]) -> None:
 
         for index in range(len(self.book_list)):
-            if isbn == self.book_list[index].isbn:
+            if isbn == self.book_list[index]:
                 got_book = self.book_list.pop(index)
-                logger.info(f"'{got_book.title.capitalize()}' erased from {self.name.capitalize()}'s list")
-                logger.debug(f"User's books: '{[name.title for name in self.book_list]}'")
+                logger.info(f"'ISBN {got_book}' erased from {self.name.capitalize()}'s list")
+                logger.debug(f"User's books: '{[num for num in self.book_list]}'")
 
                 for book in main_book_list:
                     if book.isbn == isbn:

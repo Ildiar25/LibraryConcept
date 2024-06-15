@@ -1,11 +1,11 @@
 
-· Eliminate "if" statements from "book_class". We will be use that on "client_class". ✓✓
+· ### Eliminate "if" statements from "book_class". We will be use that on "client_class". ✓✓
 · Give a sight to "logger information" on "book_class" and "client_class": it's the same info. Change it!
-· Change filemanager class. It will return None if we can't read a file. ✓✓
-· In library class, we create two new attributes like empty book list and empty client list. ✓✓
-· We will have a method called ‘load_books’ for example. There we will create a filemanager object that will try to
+· ### Change filemanager class. It will return None if we can't read a file. ✓✓
+· ### In library class, we create two new attributes like empty book list and empty client list. ✓✓
+· ### We will have a method called ‘load_books’ for example. There we will create a filemanager object that will try to
   read a file. If it can't do that, then this method will advise the user thanks to ‘if - else’ statements. ✓✓
-· On that method, if it can read the file, then it will convert all data to usable objects, and then it will append
+· ### On that method, if it can read the file, then it will convert all data to usable objects, and then it will append
   those elements to the main list. ✓✓
 · In our client list, we will have the same method as the last one.
-· IMPORTANT: Change the content of client's list (it had Book-type objects before) to integer (like ISBN).
+· ### IMPORTANT: Change the content of client's list (it had Book-type objects before) to integer (like ISBN). ✓✓
