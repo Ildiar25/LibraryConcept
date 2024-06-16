@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file.">
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Schedule for future commits!&#10;Ended all classes.&#10;Prepare the main.py file">
+      <change afterPath="$PROJECT_DIR$/utilities/classes/event_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/classes/library_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/library_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718435730064</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Schedule for future commits!&#10;Ended all classes.&#10;Prepare the main.py file">
+      <option name="closed" value="true" />
+      <created>1718526829666</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718526829666</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +179,7 @@
     <MESSAGE value="Client class finished! Time to minor changes on logger information and if's statements.&#10;Added 'ToDo' file." />
     <MESSAGE value="Library Class started and added new methods for load and save client data and book data on new files." />
     <MESSAGE value="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file." />
+    <MESSAGE value="Schedule for future commits!&#10;Ended all classes.&#10;Prepare the main.py file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Schedule for future commits!&#10;Ended all classes.&#10;Prepare the main.py file" />
   </component>
 </project>

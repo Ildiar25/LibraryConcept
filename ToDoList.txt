@@ -11,4 +11,5 @@
 
 · Give a sight to "logger information" on "book_class" and "client_class": it's the same info. Change it!
 
+· Improve event class and finish al new methods on library class.
 · Start to create the main.py file, all classes finisehd!

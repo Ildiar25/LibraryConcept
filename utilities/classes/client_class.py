@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class Client:
 
-    def __init__(self, ident: int, name: str, surname: str, max_allowed: int = 3, book_list: list[int] = None):
+    def __init__(self, ident: str, name: str, surname: str, max_allowed: int = 3, book_list: list[int] = None):
         """
         This builder creates a client-type object to save its representative data
         :param ident: Alphanumeric code with nine elements

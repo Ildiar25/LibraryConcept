@@ -36,9 +36,8 @@ class Library:
                     status = element[4]
 
                 except IndexError as err:
-                    print("\nNo se puede cargar el archivo.")
-                    logger.error(err)
-                    break  # I am not sure about what I am doing here, really.
+                    print(f"\nParece que algunos datos en '{BOOKS_FILE}' se han perdido.")
+                    logger.warning(err)
 
                 else:
                     book = Book(isbn, title, author, genre, status)
@@ -62,9 +61,8 @@ class Library:
                     book_data = element[4]  # That's a string representation of a string!
 
                 except IndexError as err:
-                    print("\nNo se puede cargar el archivo.")
-                    logger.error(err)
-                    break  # I am not sure about what I am doing here, really.
+                    print(f"\nParece que algunnos datos en '{CLIENTS_FILE}' se ha perdido.")
+                    logger.warning(err)
 
                 else:
                     # We need to erase the simbols and cast string numbers into integers
@@ -112,3 +110,27 @@ class Library:
 
         client = Client(ident, name, surname)
         self.client_list.append(client)
+
+    def look_for_book(self, ident: int) -> Book:
+
+        for book in self.book_list:
+            if book.isbn == ident:
+                return book
+
+    def look_for_client(self, ident: str) -> Client:
+
+        for client in self.client_list:
+            if client.ident == ident:
+                return client
+
+    def show_books(self):
+        pass
+
+    def show_clients(self):
+        pass
+
+    def show_events(self):
+        pass
+
+    def new_request(self):
+        pass
