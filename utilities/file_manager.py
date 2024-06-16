@@ -41,7 +41,7 @@ class FileManager:
 
         try:
             with open(self.filepath, "w", encoding="utf-8", newline="") as file_saved:
-                add_data = csv.writer(file_saved)
+                add_data = csv.writer(file_saved, delimiter=";")
 
                 for row in new_data:
                     add_data.writerow(row)
