@@ -9,7 +9,8 @@
 · ### In our client list, we will have the same method as the last one. ✓✓
 · ### IMPORTANT: Change the content of client's list (it had Book-type objects before) to integer (like ISBN). ✓✓
 
-· Give a sight to "logger information" on "book_class" and "client_class": it's the same info. Change it!
+· ### Give a sight to "logger information" on "book_class" and "client_class": it's the same info. Change it! ✓✓
 
+· Rewrite library_class and event_class if it proceeds.
 · Improve event class and finish al new methods on library class.
 · Start to create the main.py file, all classes finisehd!

@@ -25,42 +25,52 @@ class Client:
             self.book_list = []
         else:
             self.book_list = book_list
-        logger.debug(f"New client-type object created: '{self.name.upper()}'")
 
-    def take_away(self, isbn: int, main_book_list: list[Book]) -> None:
+        logger.info(f"New Client-type object as '{self.name.capitalize()}' created!")
 
-        for book in main_book_list:
-            if book.isbn == isbn:
-                if len(self.book_list) < self.max_allowed and book.status == "disponible":
-                    self.book_list.append(book.isbn)
-                    logger.info(f"Book '{book.title}' added to {self.name}'s list")
-                    book.lent(self.name.capitalize())
+    def take_away(self, book: Book) -> None:
+        """
+        This function allows to change the status-object according to different statements.
+        :param book: a book-type object to interact with
+        :return: None
+        """
+        if len(self.book_list) < self.max_allowed and book.status == "disponible":
+            logger.debug(f"Actual ISBN list: {[number for number in self.book_list]} ## New ISBN: {book.isbn}")
+            self.book_list.append(book.isbn)
+            book.lent()
 
-                else:
-                    print("\nNo se puede llevar este ejemplar. Tiene el cupo completo o no se encuentra disponible.")
-                    logger.debug(f"Client list: {[num for num in self.book_list]} | {book.title.upper()} "
-                                 f"status:'{book.status}'")
+            logger.debug(f"Client list updated: {[number for number in self.book_list]}")
 
-    def give_back(self, isbn: int, main_book_list: list[Book]) -> None:
+        else:
+            print("\nNo se puede llevar ningún ejemplar hasta que devuelva los que ya posee.")
 
-        for index in range(len(self.book_list)):
-            if isbn == self.book_list[index]:
-                got_book = self.book_list.pop(index)
-                logger.info(f"'ISBN {got_book}' erased from {self.name.capitalize()}'s list")
-                logger.debug(f"User's books: '{[num for num in self.book_list]}'")
+    def give_back(self, book: Book) -> None:
+        """
+        This function allows to change the status-object according to different statements.
+        :param book: a book-type object to interact with
+        :return:
+        """
+        if book.isbn in self.book_list:
+            logger.debug(f"Actual ISBN list: {[number for number in self.book_list]} ## ISBN erased: {book.isbn}")
+            self.book_list.remove(book.isbn)
+            book.returned()
 
-                for book in main_book_list:
-                    if book.isbn == isbn:
-                        book.returned(self.name.capitalize())
-                        logger.info(f"The book '{book.title}' has change its status to '{book.status}'.")
+            logger.debug(f"Client list updated: {[number for number in self.book_list]}")
 
-    def save_book(self, isbn: int, main_book_list: list[Book]) -> None:
+        else:
+            print("No dispone de ese libro en su cuenta.")
 
-        for book in main_book_list:
-            if book.isbn == isbn:
-                if book.status == "prestado":
-                    book.saved(self.name.capitalize())
-                    logger.info(f"'{book.title}' reserved by '{self.name}'")
+    def save_book(self, book: Book) -> None:
+        """
+        This function allows to change the status-object according to different statements
+        :param book: a book-type object to interact with
+        :return: None
+        """
+        if book.isbn not in self.book_list and book.status == "prestado":
+            logger.debug(f"Actual ISBN list: {[number for number in self.book_list]} ## ISBN saved: {book.isbn}")
+            book.saved()
 
-                else:
-                    print(f"El libro '{book.title.capitalize()}' se encuentra {book.status}.")
+            logger.debug(f"Actual book status: '{book.status}'.")
+
+        else:
+            print("Ya dispone de ese ejemplar.")

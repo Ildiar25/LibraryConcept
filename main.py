@@ -11,8 +11,17 @@ def main():
     library = Library()
 
     print("¿Qué desea hacer?")
-    menu()
 
+    library.add_book(123456789, "Fantasia 2000", "Alice Wagner", "comedy")
+
+    book = library.book_list[0]
+
+    print(book.status)
+    book.lent()
+    print(book.status)
+
+    library.save_books()
+    library.load_clients()
 
 if __name__ == "__main__":
     print(150*"=")
