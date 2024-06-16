@@ -72,7 +72,7 @@ class FileManager:
 
         except FileNotFoundError as err:
             logger.error(err)
-            print("\nEl archivo no se encuentra")
+            print("\nEl archivo no se encuentra.")
         except Exception as err:
             logger.error(err)
             print("\nUn error inesperado a ocurrido.")

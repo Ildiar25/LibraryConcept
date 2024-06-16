@@ -59,7 +59,7 @@ class Library:
                     name = element[1]
                     surname = element[2]
                     max_allowed = element[3]
-                    book_data = element[4]
+                    book_data = element[4]  # That's a string representation of a string!
 
                 except IndexError as err:
                     print("\nNo se puede cargar el archivo.")
@@ -67,9 +67,16 @@ class Library:
                     break  # I am not sure about what I am doing here, really.
 
                 else:
-                    # Give a sight the method 'save_clients'. We need to know which type of value is 'book_data'.
-                    # Maybe we need to cast it to integer before send it to de function...
-                    client = Client(ident, name, surname, max_allowed, book_data)
+                    # We need to erase the simbols and cast string numbers into integers
+                    list_str: list[str] = book_data.strip("[]").split(", ")
+                    isbn_list: list[int] = []
+
+                    for number in list_str:
+                        if number.isdigit():
+                            number = int(number)
+                            isbn_list.append(number)
+
+                    client = Client(ident, name, surname, max_allowed, isbn_list)
                     self.client_list.append(client)
 
     def save_books(self) -> None:
@@ -96,8 +103,12 @@ class Library:
         main_file.save(ready_clients)
         logger.info(f"Data saved correctly into '{CLIENTS_FILE}'!")
 
-    def add_book(self) -> None:
-        pass
+    def add_book(self, isbn, title, author, genre) -> None:
 
-    def add_client(self) -> None:
-        pass
+        book = Book(isbn, title, author, genre)
+        self.book_list.append(book)
+
+    def add_client(self, ident, name, surname) -> None:
+
+        client = Client(ident, name, surname)
+        self.client_list.append(client)

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Library Class started and added new methods for load and save client data and book data on new files." />
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/classes/library_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/library_class.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718389451869</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file.">
+      <option name="closed" value="true" />
+      <created>1718435730064</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718435730064</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +170,7 @@
     <MESSAGE value="Starting to work into Client class" />
     <MESSAGE value="Client class finished! Time to minor changes on logger information and if's statements.&#10;Added 'ToDo' file." />
     <MESSAGE value="Library Class started and added new methods for load and save client data and book data on new files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Library Class started and added new methods for load and save client data and book data on new files." />
+    <MESSAGE value="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in 'client_class'.&#10;Finishing methods in 'library_class'.&#10;Added some constants to 'utl' file." />
   </component>
 </project>
