@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Major updates and code improving">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/classes/book_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/book_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/classes/client_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/client_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/classes/event_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/event_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/classes/library_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/library_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/utl.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/utl.py" afterDir="false" />
-    </list>
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Major updates and code improving" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718564650832</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Major updates and code improving">
+      <option name="closed" value="true" />
+      <created>1718651556371</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718651556371</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -61,7 +61,7 @@ def insert_dni() -> str:
 
 def insert_option(text_format: str, possible_answers: list[str]):
 
-    answer = input(f"\n{text_format} [{"·".join(possible_answers)}]: ").upper()
+    answer = input(f"\n{text_format} ({"·".join(possible_answers)}): ").upper()
 
     if answer in possible_answers:
         return answer
