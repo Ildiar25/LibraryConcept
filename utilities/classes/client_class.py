@@ -11,7 +11,7 @@ class Client:
     def __init__(self, ident: str, name: str, surname: str, max_allowed: int = 3, book_list: list[int] = None):
         """
         This builder creates a client-type object to save its representative data
-        :param ident: Alphanumeric code with nine elements
+        :param ident: alphanumeric code with nine elements
         :param name: client's name in string format
         :param surname: client's surname in string format
         :param max_allowed: max quantity of books in integer ('3' by default)
@@ -26,7 +26,8 @@ class Client:
         else:
             self.book_list = book_list
 
-        logger.info(f"New Client-type object as '{self.name.capitalize()}' created!")
+        logger.info(f"New Client-type object created!")
+        logger.debug(f"CONTENT: {self.__dict__}")
 
     def take_away(self, book: Book) -> None:
         """

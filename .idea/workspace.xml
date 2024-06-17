@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Updating Main file.&#10;Added recursive functions.&#10;Updated Library class.">
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Major updates and code improving">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/classes/book_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/book_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/classes/client_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/client_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/classes/event_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/event_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/classes/library_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/library_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/utl.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/utl.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718551740226</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Major updates and code improving">
+      <option name="closed" value="true" />
+      <created>1718564650832</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718564650832</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +211,7 @@
     <MESSAGE value="Schedule for future commits!&#10;Ended all classes.&#10;Prepare the main.py file" />
     <MESSAGE value="Updating some classes!" />
     <MESSAGE value="Updating Main file.&#10;Added recursive functions.&#10;Updated Library class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating Main file.&#10;Added recursive functions.&#10;Updated Library class." />
+    <MESSAGE value="Major updates and code improving" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major updates and code improving" />
   </component>
 </project>

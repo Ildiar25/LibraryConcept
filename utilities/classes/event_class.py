@@ -1,6 +1,5 @@
 
 from utilities.log_config import *
-
 import datetime
 
 # Create our logger from Event to work with
@@ -14,4 +13,4 @@ class Event:
         self.customer = customer
         self.event = event
         self.date: datetime = datetime.datetime.now()
-        logger.debug("New Event-type object created.")
+        logger.info("New Event-type object created.")

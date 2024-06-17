@@ -14,7 +14,8 @@ class FileManager:
         :param filepath: string directory and file name with extension
         """
         self.filepath = filepath
-        logger.info(f"New FileManager-type object as '{self.filepath}' created!")
+        logger.info(f"New FileManager-type object created!")
+        logger.debug(f"CONTENT: {self.__dict__}")
 
     # Main methods
     def create(self) -> None:
@@ -74,7 +75,7 @@ class FileManager:
 
         try:
             with open(self.filepath, "r", encoding="utf-8") as file_info:
-                row = csv.reader(file_info)
+                row = csv.reader(file_info, delimiter=";")
                 logger.info(f"File '{name[-1]}' readed successfully!")
 
                 for info_list in row:

@@ -11,6 +11,7 @@
 
 · ### Give a sight to "logger information" on "book_class" and "client_class": it's the same info. Change it! ✓✓
 
-· Rewrite library_class and event_class if it proceeds.
+· ### Rewrite library_class. ✓✓
+· Rewrite event_class if it proceeds.
 · Improve event class and finish al new methods on library class.
 · Start to create the main.py file, all classes finisehd!

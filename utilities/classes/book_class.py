@@ -21,7 +21,8 @@ class Book:
         self.author = author
         self.genre = genre
         self.status = status
-        logger.info(f"New Book-type object as '{self.title}' created!")
+        logger.info(f"New Book-type object created!")
+        logger.debug(f"CONTENT: {self.__dict__}")
 
     # Main methods
     def lent(self) -> None:
