@@ -1,4 +1,5 @@
 import logging
+from utilities.utl import LOGS_FILE
 
 # ----- LEVELS ----- #
 
@@ -13,7 +14,7 @@ import logging
 # https://docs.python.org/3/library/logging.html
 
 logging.basicConfig(level=logging.DEBUG,
-                    filename="resources/library_logs.log",
+                    filename=f"resources/{LOGS_FILE}",
                     filemode="a",
                     encoding="utf-8",
                     datefmt="%d/%m/%y · %H:%M:%S",

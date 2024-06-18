@@ -30,13 +30,13 @@ class Library:
         main_file = FileManager(f"resources/{BOOKS_FILE}")
         book_list = main_file.open()
 
-        if book_list is None:
+        if book_list is None or len(book_list) == 0:
             print("No hay datos almacenados!")
 
         else:
             for element in book_list:
                 try:
-                    isbn = element[0]
+                    isbn = int(element[0])  # We need to cast this value to integer!
                     title = element[1]
                     author = element[2]
                     genre = element[3]
@@ -63,7 +63,7 @@ class Library:
         main_file = FileManager(f"resources/{CLIENTS_FILE}")
         client_list = main_file.open()
 
-        if client_list is None:
+        if client_list is None or len(client_list) == 0:
             print("No hay datos almacenados!")
 
         else:
@@ -72,7 +72,7 @@ class Library:
                     ident = element[0]
                     name = element[1]
                     surname = element[2]
-                    max_allowed = element[3]
+                    max_allowed = int(element[3])  # We need to cast this value to integer!
                     book_data = element[4]  # That's a string representation of a string!
 
                 except IndexError as err:

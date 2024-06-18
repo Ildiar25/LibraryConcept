@@ -2,6 +2,7 @@
 
 BOOKS_FILE = "books.csv"
 CLIENTS_FILE = "clients.csv"
+LOGS_FILE = "library_logs.log"
 SYMBOLS = ('\\', '/', '*', '<', '>', '|', '"', '[', ']', '{', '}', '+', '_', ';', '@', '#', '~', '^', '=', '¬')
 
 
