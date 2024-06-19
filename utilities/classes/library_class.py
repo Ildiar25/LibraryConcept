@@ -5,6 +5,8 @@ from utilities.classes.book_class import Book
 from utilities.classes.client_class import Client
 from utilities.utl import BOOKS_FILE, CLIENTS_FILE
 
+import colorama
+
 # Create our logger from Book to work with
 logger = logging.getLogger(__name__)
 
@@ -31,7 +33,7 @@ class Library:
         book_list = main_file.open()
 
         if book_list is None or len(book_list) == 0:
-            print("No hay datos almacenados!")
+            print(" · ¡No hay datos almacenados en Libros!")
 
         else:
             for element in book_list:
@@ -54,6 +56,7 @@ class Library:
             # I don't understand why Pycharm says 'unresolved attribute reference isbn for class list',
             # it works as it should do and doesn't raise any error. It is written on the file too and works perfectly.
             logger.debug(f"BOOK LIST UPDATE: {[b_isbn.isbn for b_isbn in self.book_list]}")
+            print(" · ¡Libros cargados!")
 
     def load_clients(self) -> None:
         """
@@ -64,7 +67,7 @@ class Library:
         client_list = main_file.open()
 
         if client_list is None or len(client_list) == 0:
-            print("No hay datos almacenados!")
+            print(" · ¡No hay datos almacenados en Clientes!")
 
         else:
             for element in client_list:
@@ -96,6 +99,7 @@ class Library:
             # I don't understand why Pycharm says 'unresolved attribute reference ident for class list',
             # it works as it should do and doesn't raise any error. It is written on the file too and works perfectly.
             logger.debug(f"CLIENT LIST UPDATE: {[c_id.ident for c_id in self.client_list]}")
+            print(" · ¡Clientes cargados!")
 
     def save_books(self) -> None:
         """
@@ -175,10 +179,58 @@ class Library:
                 return client
 
     def show_books(self):
-        pass
+
+        for book in self.book_list:
+
+            # Create text format
+            format_isbn = " {:^10}".format(str(book.isbn)[:10])
+            format_title = " {:<85}".format(book.title[:85].upper())
+            format_author = " {:<20}".format(book.author[:20].upper())
+            format_genre = " {:<10}".format(book.genre[:10].upper())
+            format_status = " {:^12}".format(book.status[:12].upper())
+
+            # Prepare colors
+            available = colorama.Fore.GREEN
+            reserved = colorama.Fore.YELLOW
+            unavailable = colorama.Fore.RED
+            reset = colorama.Fore.RESET
+
+            # Add conditionals
+            if book.status == "disponible":
+                print(f"||{format_isbn}|{format_title}|{format_author}|{format_genre}|{available}"
+                      f"{format_status}{reset}||")
+            elif book.status == "reservado":
+                print(f"||{format_isbn}|{format_title}|{format_author}|{format_genre}|{reserved}"
+                      f"{format_status}{reset}||")
+            elif book.status == "prestado":
+                print(f"||{format_isbn}|{format_title}|{format_author}|{format_genre}|{unavailable}"
+                      f"{format_status}{reset}||")
 
     def show_clients(self):
-        pass
 
-    def show_events(self):
-        pass
+        for client in self.client_list:
+
+            # Prepare client book list
+            book_list = " | ".join([str(isbn) for isbn in client.book_list])
+
+            # Create text format
+            format_ident = " {:^10} ".format(client.ident)
+            format_name = " {:<79}".format(client.name.upper() + " " + client.surname.upper())
+            format_books = "  [{:^38}]  ".format(book_list)
+            format_quantity = "{:^5}".format(str(client.max_allowed - len(client.book_list)))
+
+            # Prepare colors
+            available = colorama.Fore.GREEN
+            adviced = colorama.Fore.YELLOW
+            unavailable = colorama.Fore.RED
+            reset = colorama.Fore.RESET
+
+            # Add conditionals
+            if len(client.book_list) == 3:
+                print(f"||{format_ident}|{format_name}|{format_books}|{available}{format_quantity}{reset}||")
+            elif len(client.book_list) == 2:
+                print(f"||{format_ident}|{format_name}|{format_books}|{adviced}{format_quantity}{reset}||")
+            elif len(client.book_list) == 1:
+                print(f"||{format_ident}|{format_name}|{format_books}|{adviced}{format_quantity}{reset}||")
+            elif len(client.book_list) == 0:
+                print(f"||{format_ident}|{format_name}|{format_books}|{unavailable}{format_quantity}{reset}||")
