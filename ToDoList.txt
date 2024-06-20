@@ -12,6 +12,10 @@
 · ### Rewrite library_class. ✓✓
 · ### Finish al new methods on library class. ✓✓
 
-· Remember to test show_clients function. It was created with no client to test it.
-· Start to create the main.py file, all classes finisehd!
-· Give a sight to log file: It needs to reduce the books' name when it saves data.
+· ### Remember to test show_clients function. It was created with no client to test it. ✓✓
+· ### Start to create the main.py file, all classes finisehd! ✓✓
+· ### Give a sight to log file: It needs to reduce the books' name when it saves data. ✓✓
+
+Conclusion: By the time, the only thing it remains to do is to add something to register the main functions on this
+app like lend a book or another one like that. I need to add time marks too and create a list of events. However,
+I am happy with these results!
