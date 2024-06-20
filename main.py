@@ -5,17 +5,239 @@ import time
 import os
 
 
+##### REQUEST SECTION #####
+def book_return() -> None:
+    # We load all necessary data
+    ident_list = [client.ident for client in library.client_list]
+    isbn_list = [book.isbn for book in library.book_list]
+
+    print()
+    print(150 * "=")
+    print("||{:<146}||".format(" ~~ DEVOLUCIÓN ~~ "))
+    print(150 * "=")
+
+    time.sleep(1)
+    print("\nPara realizar una devolución se deben disponer de los siguientes datos:\n"
+          " · DNI del cliente que solicita la petición\n"
+          " · El ISBN del libro a devolver.")
+
+    print("Primero vamos a seleccionar al cliente mediante su DNI:")
+
+    ident = insert_dni()
+
+    if ident in ident_list:
+
+        client_request = library.look_for_client(ident)
+        print(f"\n¡Gracias {client_request.name.capitalize()}! ¿Qué libro quieres devolver?")
+        print("Por favor, introduce su ISBN en el siguiente campo:")
+
+        isbn_request = insert_number(9)
+
+        if isbn_request in isbn_list:
+            returned_book = library.look_for_book(isbn_request)
+            print(f"\n¡Se va a devolver el libro titulado '{returned_book.title.upper()}'!")
+            client_request.give_back(returned_book)
+
+        else:
+            print("\n¡Ese ISBN no pertenece a ningún libro almacenado en esta biblioteca!\n")
+
+    else:
+        print("\n¡Ese DNI no pertenece a ningún cliente registrado en esta biblioteca!\n")
+
+
+def book_lending() -> None:
+    # We load all necessary data
+    ident_list = [client.ident for client in library.client_list]
+    isbn_list = [book.isbn for book in library.book_list]
+
+    print()
+    print(150 * "=")
+    print("||{:<146}||".format(" ~~ PRÉSTAMO ~~ "))
+    print(150 * "=")
+
+    time.sleep(1)
+    print("\nPara realizar una prestación se deben disponer de los siguientes datos:\n"
+          " · DNI del cliente que solicita la petición\n"
+          " · El ISBN del libro a prestar.")
+
+    print("Primero vamos a seleccionar al cliente mediante su DNI:")
+
+    ident = insert_dni()
+
+    if ident in ident_list:
+
+        client_request = library.look_for_client(ident)
+        print(f"\n¡Gracias {client_request.name.capitalize()}! ¿Qué libro quieres pedir prestado?")
+        print("Por favor, introduce su ISBN en el siguiente campo:")
+
+        isbn_request = insert_number(9)
+
+        if isbn_request in isbn_list:
+            lended_book = library.look_for_book(isbn_request)
+            print(f"\n¡Se van a llevar el libro titulado '{lended_book.title.upper()}'!\n")
+
+            answer = insert_option("¿Quieres llevarte este libro?", ["S", "N"])
+
+            if answer == "S":
+                client_request.take_away(lended_book)
+            elif answer == "N":
+                print("¡De acuerdo!")
+
+        else:
+            print("\n¡Ese ISBN no pertenece a ningún libro almacenado en esta biblioteca!\n")
+
+    else:
+        print("\n¡Ese DNI no pertenece a ningún cliente registrado en esta biblioteca!\n")
+
+
+def book_reserve() -> None:
+    # We load all necessary data
+    ident_list = [client.ident for client in library.client_list]
+    isbn_list = [book.isbn for book in library.book_list]
+
+    print()
+    print(150 * "=")
+    print("||{:<146}||".format(" ~~ RESERVA ~~ "))
+    print(150 * "=")
+
+    time.sleep(1)
+    print("\nPara realizar una reserva se deben disponer de los siguientes datos:\n"
+          " · DNI del cliente que solicita la petición\n"
+          " · El ISBN del libro a prestar.")
+
+    print("Primero vamos a seleccionar al cliente mediante su DNI:")
+
+    ident = insert_dni()
+
+    if ident in ident_list:
+
+        client_request = library.look_for_client(ident)
+        print(f"\n¡Gracias {client_request.name.capitalize()}! ¿Qué libro quieres reservar?")
+        print("Por favor, introduce su ISBN en el siguiente campo:")
+
+        isbn_request = insert_number(9)
+
+        if isbn_request in isbn_list:
+            reserved_book = library.look_for_book(isbn_request)
+            print(f"\n¡Se va a reservar el libro titulado '{reserved_book.title.upper()}'!\n")
+
+            answer = insert_option("¿Quieres reservar este libro?", ["S", "N"])
+
+            if answer == "S":
+                client_request.save_book(reserved_book)
+            elif answer == "N":
+                print("¡De acuerdo!")
+
+        else:
+            print("\n¡Ese ISBN no pertenece a ningún libro almacenado en esta biblioteca!\n")
+
+    else:
+        print("\n¡Ese DNI no pertenece a ningún cliente registrado en esta biblioteca!\n")
+
+
 ##### CLIENT SECTION #####
 def new_client() -> None:
-    pass
+    # We load all NIEs from the client_list
+    ident_list = [client.ident for client in library.client_list]
+
+    print()
+    print(150 * "=")
+    print("||{:<146}||".format(" ~~ NUEVO CLIENTE ~~ "))
+    print(150 * "=")
+
+    time.sleep(1)
+    print("\nPara agregar un nuevo cliente al registro se deben disponer de los siguientes datos:\n"
+          " · DNI del cliente a agregar\n"
+          " · El nombre del mismo\n"
+          " · Y su apellido.")
+
+    print("Primero vamos a comprobar si el DNI que se va a introducir existe:")
+
+    ident = insert_dni()
+
+    if ident not in ident_list:
+        print("\n¡Perfecto!\n"
+              "A partir de ahora, simplemente rellena los campos. No te preocupes si te equivocas.\n"
+              "¡Más adelante podrás modificar los datos del cliente!\n"
+              "\nNOMBRE COMPLETO:")
+        name = insert_text(3, 20)
+        print("\nAPELLIDOS:")
+        surname = insert_text(3, 50)
+
+        library.add_client(ident, name, surname)
+
+    else:
+        print("\n¡No se puede agregar un DNI que ya existe!\n")
 
 
 def delete_client() -> None:
-    pass
+    # We load all NIEs from the client_list
+    ident_list = [client.ident for client in library.client_list]
+
+    print()
+    print(150 * "=")
+    print("||{:<146}||".format(" ~~ ELIMINAR CLIENTE ~~ "))
+    print(150 * "=")
+
+    time.sleep(1)
+    print("\nPara eliminar un cliente del registro es necesario aportar un número de DNI.")
+    print("\nPor favor, escribe dicho número:")
+
+    required_ident = insert_dni()
+
+    if required_ident in ident_list:
+        finded_client = library.look_for_client(required_ident)
+
+        answer = insert_option(f"Desea eliminar '{finded_client.name.upper()}'?", ["S", "N"])
+
+        if answer == "S":
+            library.client_list.remove(finded_client)
+        elif answer == "N":
+            print("¡De acuerdo!")
+
+    else:
+        print("\n¡Ese DNI no pertenece a ningún cliente registrado en esta biblioteca!\n")
 
 
 def update_client() -> None:
-    pass
+    # We load all NIEs from the client_list
+    ident_list = [client.ident for client in library.client_list]
+
+    print()
+    print(150 * "=")
+    print("||{:<146}||".format(" ~~ MODIFICAR CLIENTE ~~ "))
+    print(150 * "=")
+
+    time.sleep(1)
+    print("\nPara modificar un cliente del registro es necesario aportar un número de DNI.")
+    print("\nPor favor, escribe dicho número:")
+
+    required_ident = insert_dni()
+
+    if required_ident in ident_list:
+        finded_client = library.look_for_client(required_ident)
+
+        print(f"\n¡Perfecto! El cliente que deseas modificar se llama '{finded_client.name.upper()}'.\n"
+              f"¿Qué apartado quieres modificar?\n\n"
+              f" · 1) NOMBRE\n"
+              f" · 2) APELLIDOS\n"
+              f" · 3) CANCELAR")
+
+        answer = insert_option("Selecciona una opción", ["1", "2", "3"])
+
+        if answer == "1":
+            print("\n >>> NUEVO NOMBRE:")
+            finded_client.name = insert_text(3, 20)
+        elif answer == "2":
+            print("\n >>> NUEVOS APELLIDOS:")
+            finded_client.surname = insert_text(3, 50)
+        elif answer == "3":
+            print("¡De acuerdo!")
+
+        print(f"¡Datos de '{finded_client.name.upper()}' actualizados!")
+
+    else:
+        print("\n¡Ese DNI no pertenece a ningún cliente registrado en esta biblioteca!\n")
 
 
 def show_clients() -> None:
@@ -33,19 +255,17 @@ def show_clients() -> None:
         print("\n\n")
 
         # Prepare header
-        format_ident = "{:^12}".format(" --DNI-- ")
-        format_name = "{:^80}".format("--NOMBRE--")
-        format_books = "{:^44}".format("--TÍTULOS PRESTADOS--")
-        format_quantity = "{:^5}".format("--HUECO--")
+        format_ident = "{:-^13}".format(" DNI ")
+        format_name = "{:-^81}".format(" NOMBRE ")
+        format_books = "{:-^44}".format(" TÍTULOS PRESTADOS ")
+        format_quantity = "{:-^5}".format("HUECO")
 
         print(150 * "=")
-        print(150 * "-")
         print(f"||{format_ident}|{format_name}|{format_books}|{format_quantity}||")
-        print(150 * "-")
 
         library.show_clients()
 
-        print(150 * "-")
+        print(150 * "=")
         print("\n\n")
 
 
@@ -66,7 +286,7 @@ def new_book() -> None:
           " · Su autor\n"
           " · Y el género al que pertenece.")
 
-    print("Primero vamos a  comprobar si el ISBN que se va a introducir existe:")
+    print("Primero vamos a comprobar si el ISBN que se va a introducir existe:")
 
     isbn = insert_number(9)
 
@@ -191,7 +411,7 @@ def show_books() -> None:
         print("\n\n")
 
 
-##### MAIN SECTIONS #####
+##### MAIN SECTION #####
 def books() -> None:
     print()
     print("{:_^150}".format(" Sección LIBROS "))
@@ -255,11 +475,11 @@ def requests() -> None:
     answer = insert_option("Qué desea hacer?", ["1", "2", "3", "4"])
 
     if answer == "1":
-        pass
+        book_return()
     elif answer == "2":
-        pass
+        book_lending()
     elif answer == "3":
-        pass
+        book_reserve()
     elif answer == "4":
         print("¡De acuerdo!")
 

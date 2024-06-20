@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Planing main code and minor changes">
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Finished all book section on main menu. I will start to prepare client section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/classes/event_class.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/classes/library_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/library_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/utl.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/utl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/log_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/log_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718737886643</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Finished all book section on main menu. I will start to prepare client section">
+      <option name="closed" value="true" />
+      <created>1718824334175</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718824334175</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +242,7 @@
     <MESSAGE value="Updating Main file.&#10;Added recursive functions.&#10;Updated Library class." />
     <MESSAGE value="Major updates and code improving" />
     <MESSAGE value="Planing main code and minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Planing main code and minor changes" />
+    <MESSAGE value="Finished all book section on main menu. I will start to prepare client section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished all book section on main menu. I will start to prepare client section" />
   </component>
 </project>

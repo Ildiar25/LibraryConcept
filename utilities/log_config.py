@@ -13,7 +13,7 @@ from utilities.utl import LOGS_FILE
 
 # https://docs.python.org/3/library/logging.html
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.INFO,
                     filename=f"resources/{LOGS_FILE}",
                     filemode="a",
                     encoding="utf-8",

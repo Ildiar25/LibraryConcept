@@ -14,3 +14,4 @@
 
 · Remember to test show_clients function. It was created with no client to test it.
 · Start to create the main.py file, all classes finisehd!
+· Give a sight to log file: It needs to reduce the books' name when it saves data.

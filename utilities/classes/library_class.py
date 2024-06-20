@@ -214,8 +214,8 @@ class Library:
             book_list = " | ".join([str(isbn) for isbn in client.book_list])
 
             # Create text format
-            format_ident = " {:^10} ".format(client.ident)
-            format_name = " {:<79}".format(client.name.upper() + " " + client.surname.upper())
+            format_ident = "  {:^10} ".format(client.ident)
+            format_name = " {:<79} ".format(client.name.upper() + " " + client.surname.upper())
             format_books = "  [{:^38}]  ".format(book_list)
             format_quantity = "{:^5}".format(str(client.max_allowed - len(client.book_list)))
 
@@ -227,10 +227,10 @@ class Library:
 
             # Add conditionals
             if len(client.book_list) == 3:
-                print(f"||{format_ident}|{format_name}|{format_books}|{available}{format_quantity}{reset}||")
+                print(f"||{format_ident}|{format_name}|{format_books}|{unavailable}{format_quantity}{reset}||")
             elif len(client.book_list) == 2:
                 print(f"||{format_ident}|{format_name}|{format_books}|{adviced}{format_quantity}{reset}||")
             elif len(client.book_list) == 1:
                 print(f"||{format_ident}|{format_name}|{format_books}|{adviced}{format_quantity}{reset}||")
             elif len(client.book_list) == 0:
-                print(f"||{format_ident}|{format_name}|{format_books}|{unavailable}{format_quantity}{reset}||")
+                print(f"||{format_ident}|{format_name}|{format_books}|{available}{format_quantity}{reset}||")
