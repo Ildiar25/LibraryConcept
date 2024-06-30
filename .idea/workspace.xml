@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Actually all ended!&#10;I can say I have just finished this practice!">
-      <change beforePath="$PROJECT_DIR$/ToDoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList.txt" afterDir="false" />
+    <list default="true" id="cde6a12a-846c-4f5f-a2d0-721983d337da" name="Changes" comment="Actually all ended!&#10;Minor changes and I added a conclusion!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/clients.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/clients.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/classes/book_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/classes/book_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +34,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Joan/PycharmProjects/LibraryConcept",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LibraryConcept" />
@@ -205,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718904520707</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Actually all ended!&#10;Minor changes and I added a conclusion!">
+      <option name="closed" value="true" />
+      <created>1718904907664</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718904907664</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,6 +260,7 @@
     <MESSAGE value="Planing main code and minor changes" />
     <MESSAGE value="Finished all book section on main menu. I will start to prepare client section" />
     <MESSAGE value="Actually all ended!&#10;I can say I have just finished this practice!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actually all ended!&#10;I can say I have just finished this practice!" />
+    <MESSAGE value="Actually all ended!&#10;Minor changes and I added a conclusion!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actually all ended!&#10;Minor changes and I added a conclusion!" />
   </component>
 </project>
